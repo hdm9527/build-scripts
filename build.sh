@@ -3,8 +3,9 @@
 # HiiraKernel CI | Powered by Drone | 2020 -
 
 export ARCH=arm64
-export CROSS_COMPILE=../build-tools/arm64-gcc/bin/aarch64-elf-
-export CROSS_COMPILE_ARM32=../build-tools/arm32-gcc/bin/arm-eabi-
+export PATH="../build-tools/proton-clang/bin:$PATH"
+export CROSS_COMPILE=aarch64-linux-gnu-
+export CROSS_COMPILE_COMPAT=arm-linux-gnueabi-
 export KBUILD_BUILD_USER=apollo
 export KBUILD_BUILD_HOST=equinix-ci
 export KJOBS="$((`grep -c '^processor' /proc/cpuinfo` * 2))"
@@ -13,12 +14,12 @@ VERSION="$(cat arch/arm64/configs/apollo-perf_defconfig | grep "CONFIG_LOCALVERS
 echo
 echo "Setting defconfig"
 echo
-make apollo-perf_defconfig || exit 1
+make CC=clang AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip LD=ld.lld apollo-perf_defconfig || exit 1
 
 echo
 echo "Compiling"
 echo 
-make -j${KJOBS} || exit 1
+make CC=clang AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip LD=ld.lld -j${KJOBS} || exit 1
 
 echo
 echo "Building Kernel Package"
