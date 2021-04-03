@@ -10,7 +10,8 @@ export KBUILD_BUILD_USER=apollo
 export KBUILD_BUILD_HOST=drone
 export KJOBS="$((`grep -c '^processor' /proc/cpuinfo` * 2))"
 VERSION="$(cat arch/arm64/configs/vendor/apollo_user_defconfig | grep "CONFIG_LOCALVERSION\=" | sed -r 's/.*"(.+)".*/\1/' | sed 's/^.//')"
-
+git submodule init
+git submodule update
 echo
 echo "Setting defconfig"
 echo
