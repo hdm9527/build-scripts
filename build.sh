@@ -10,6 +10,7 @@ export ARCH=arm64
 export PATH="../build-tools/proton-clang/bin:$PATH"
 export CROSS_COMPILE=aarch64-linux-gnu-
 export CROSS_COMPILE_COMPAT=arm-linux-gnueabi-
+export CROSS_COMPILE_ARM32=arm-linux-gnueabi-
 export KBUILD_BUILD_USER=apollo
 export KBUILD_BUILD_HOST=drone
 export KJOBS="$((`grep -c '^processor' /proc/cpuinfo` * 2))"
