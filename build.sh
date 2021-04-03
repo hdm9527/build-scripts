@@ -13,7 +13,7 @@ export CROSS_COMPILE_COMPAT=arm-linux-gnueabi-
 export KBUILD_BUILD_USER=apollo
 export KBUILD_BUILD_HOST=drone
 export KJOBS="$((`grep -c '^processor' /proc/cpuinfo` * 2))"
-VERSION="$(cat arch/arm64/configs/vendor/apollo_user_defconfig | grep "CONFIG_LOCALVERSION\=" | sed -r 's/.*"(.+)".*/\1/' | sed 's/^.//')$(date '+%Y-%m-%d-%H:%M')"
+VERSION="latekernel-$(date '+%Y-%m-%d-%H:%M')"
 
 echo
 echo "Setting defconfig"
