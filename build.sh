@@ -1,6 +1,10 @@
 #!/bin/bash
 
-# HiiraKernel CI | Powered by Drone | 2020 -
+# lateautumn CI | Powered by Drone | 2021 -
+
+curl -X POST "https://api.telegram.org/bot1654679343:AAEue4ABaftJ2IEHjLFysx1nLjKEZe5e250/sendMessage" -d "chat_id=-1001218876577&text=starts build
+$(date)"
+
 
 export ARCH=arm64
 export PATH="../build-tools/proton-clang/bin:$PATH"
@@ -10,8 +14,7 @@ export KBUILD_BUILD_USER=apollo
 export KBUILD_BUILD_HOST=drone
 export KJOBS="$((`grep -c '^processor' /proc/cpuinfo` * 2))"
 VERSION="$(cat arch/arm64/configs/vendor/apollo_user_defconfig | grep "CONFIG_LOCALVERSION\=" | sed -r 's/.*"(.+)".*/\1/' | sed 's/^.//')"
-git submodule init
-git submodule update
+
 echo
 echo "Setting defconfig"
 echo
