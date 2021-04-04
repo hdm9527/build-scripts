@@ -18,12 +18,12 @@ VERSION="latekernel-$(date '+%Y-%m-%d-%H:%M')"
 echo
 echo "Setting defconfig"
 echo
-make CC=clang AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip LD=ld.lld vendor/apollo_user_defconfig || exit 1
+make CC=clang AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip vendor/apollo_user_defconfig || exit 1
 
 echo
 echo "Compiling"
 echo 
-make CC=clang AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip LD=ld.lld -j${KJOBS} || exit 1
+make CC=clang AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip -j${KJOBS} || exit 1
 
 if  [ $? -eq 0 ]
 then 
