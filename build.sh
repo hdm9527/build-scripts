@@ -31,6 +31,7 @@ then
 $(date)"
 else
     curl -X POST "https://api.telegram.org/bot1654679343:AAEue4ABaftJ2IEHjLFysx1nLjKEZe5e250/sendMessage" -d "chat_id=-1001218876577&text=Failed to compile !
+    exit 1
 $(date)"
 fi
 
