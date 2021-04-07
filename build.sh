@@ -18,7 +18,7 @@ VERSION="latekernel-$(date '+%Y-%m-%d-%H:%M')"
 echo
 echo "Setting defconfig"
 echo
-make CC=clang AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip vendor/apollo_user_defconfig
+make CC=clang AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip vendor/apollo_defconfig
 
 echo
 echo "Compiling"
