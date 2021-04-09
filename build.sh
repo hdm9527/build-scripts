@@ -13,7 +13,7 @@ export CROSS_COMPILE_COMPAT=arm-linux-gnueabi-
 export KBUILD_BUILD_USER=apollo
 export KBUILD_BUILD_HOST=drone
 export KJOBS="$((`grep -c '^processor' /proc/cpuinfo` * 2))"
-VERSION="latekernel-$(date '+%Y-%m-%d-%H:%M')"
+VERSION="latekernel-$(date '+%Y-%m%d-%H%M')"
 
 echo
 echo "Setting defconfig"
