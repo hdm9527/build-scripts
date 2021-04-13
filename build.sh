@@ -7,7 +7,7 @@ $(date)"
 
 
 export ARCH=arm64
-export PATH="../build-tools/proton-clang/bin:$PATH"
+export PATH="/drone/build-tools/proton-clang/bin:$PATH"
 export CROSS_COMPILE=/usr/bin/aarch64-linux-gnu-
 export CROSS_COMPILE_COMPAT=arm-linux-gnueabi-
 export KBUILD_BUILD_USER=apollo
