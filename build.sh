@@ -42,7 +42,7 @@ echo
 mkdir kernelzip
 mkdir kernelzip/source
 cp -rp ../build-tools/anykernel/* kernelzip/
-cp arch/arm64/boot/Image.gz kernelzip/source/
+cp arch/arm64/boot/Image kernelzip/source/
 cp arch/arm64/boot/dts/vendor/qcom/kona-v2.1.dtb kernelzip/source/dtb
 cd kernelzip
 7z a -mx9 $VERSION-tmp.zip *
