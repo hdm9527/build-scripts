@@ -7,6 +7,8 @@ $(date)"
 
 
 export ARCH=arm64
+export LLVM=1
+export LLVM_IAS=1
 export PATH="/drone/build-tools/proton-clang/bin:$PATH"
 export CROSS_COMPILE=aarch64-linux-gnu-
 export CROSS_COMPILE_COMPAT=arm-linux-gnueabi-
