@@ -18,12 +18,12 @@ VERSION="latekernel-$(date '+%Y-%m%d-%H%M')"
 echo
 echo "Setting defconfig"
 echo
-make LLVM=1 LLVM_IAS=1 vendor/apollo_defconfig
+make CC=clang LLVM=1 LLVM_IAS=1 vendor/apollo_defconfig
 
 echo
 echo "Compiling"
 echo 
-make LLVM=1 LLVM_IAS=1 -j${KJOBS}
+make CC=clang LLVM=1 LLVM_IAS=1 -j${KJOBS}
 
 if  [ $? -eq 0 ]
 then 
