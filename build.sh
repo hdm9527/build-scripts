@@ -20,7 +20,7 @@ VERSION="latekernel-$(date '+%Y-%m%d-%H%M')"
 echo
 echo "Setting defconfig"
 echo
-make CC=clang LLVM=1 LLVM_IAS=1 vendor/apollolxc_defconfig
+make CC=clang LLVM=1 LLVM_IAS=1 vendor/apollo_defconfig
 
 echo
 echo "Compiling"
