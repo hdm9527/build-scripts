@@ -59,5 +59,3 @@ echo
 
 curl -v -F "chat_id=-1001218876577" -F document=@${VERSION}.zip https://api.telegram.org/bot1654679343:AAEue4ABaftJ2IEHjLFysx1nLjKEZe5e250/sendDocument
 
-curl -sL https://git.io/file-transfer | sh
-./transfer wet $VERSION.zip
