@@ -8,13 +8,13 @@ platform:
 
   os: linux
 
-  arch: amd64
+  arch: arm64
 
 steps:
 
   - name: build
 
-    image: ubuntu:20.10
+    image: ubuntu:21.04
 
     environment:
       id:
@@ -34,7 +34,7 @@ steps:
       
       - git clone https://github.com/lateautumn233/build-scripts /drone/build-tools/build-scripts --branch apollo --depth 1
 
-      - git clone https://github.com/kdrag0n/proton-clang /drone/build-tools/proton-clang --depth 1
+      - git clone https://github.com/lateautumn233/LateAutumn-clang /drone/build-tools/proton-clang --depth 1
 
       - git clone https://github.com/lateautumn233/AnyKernel3 /drone/build-tools/anykernel --branch apollo --depth 1
     
