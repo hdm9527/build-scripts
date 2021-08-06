@@ -14,7 +14,7 @@ steps:
 
   - name: build
 
-    image: ubuntu:latest
+    image: ubuntu:20.10
 
     environment:
       id:
