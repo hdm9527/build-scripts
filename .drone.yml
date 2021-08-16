@@ -30,7 +30,7 @@ steps:
 
       - apt update && apt install -y curl hub liblz4-1 libyaml-0-2 p7zip-full gcc g++ bison bc make git zip flex zipalign libssl-dev python python3 gcc-aarch64-linux-gnu cpio gcc-arm-linux-gnueabi
 
-      - git clone https://$id:$ss@github.com/lateautumn233/android_kernel_xiaomi_sm8250.git /drone/build-tools/android_kernel_xiaomi_sm8250 --depth=1 -b rebase-r
+      - git clone https://$id:$ss@github.com/lateautumn233/android_kernel_xiaomi_sm8250.git /drone/build-tools/android_kernel_xiaomi_sm8250 --depth=1 -b test
       
       - git clone https://github.com/lateautumn233/build-scripts /drone/build-tools/build-scripts --branch apollo --depth 1
 
