@@ -24,7 +24,7 @@ if [ -f arch/arm64/configs/vendor/apollo_defconfig ]
 then
     make CC=clang LLVM=1 LLVM_IAS=1 vendor/apollo_defconfig
 else
-    make CC=clang LLVM=1 LLVM_IAS=1 apollo_defconfig
+    make CC=clang LLVM=1 LLVM_IAS=1 lateapollo_defconfig
 fi
 
 echo
