@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     steps:
-      - uses: actions/checkout@apollo
+      - uses: actions/checkout@master
       
       - name: Install dependency
         run: apt-get update && apt-get install -y bison build-essential bc bison curl libssl-dev git zip python flex cpio
@@ -24,4 +24,4 @@ jobs:
           git submodule init && git submodule update
           bash /drone/build-tools/build-scripts/build.sh
       - name : Upload packages
-        uses: actions/upload-artifact@apollo
+        uses: actions/upload-artifact@master
