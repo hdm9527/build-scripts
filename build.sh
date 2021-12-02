@@ -30,15 +30,15 @@ echo
 echo "Building Kernel Package"
 
 echo
-mkdir kernelzip
-mkdir kernelzip/source
-cp -rp ../anykernel/* kernelzip/
-cp arch/arm64/boot/Image kernelzip/source/
-cp arch/arm64/boot/dts/vendor/qcom/kona-v2.1.dtb kernelzip/source/dtb
+sudo mkdir kernelzip
+sudo mkdir kernelzip/source
+sudo cp -rp ../anykernel/* kernelzip/
+sudo cp arch/arm64/boot/Image kernelzip/source/
+sudo cp arch/arm64/boot/dts/vendor/qcom/kona-v2.1.dtb kernelzip/source/dtb
 cd kernelzip
 7z a -mx9 $VERSION-tmp.zip *
 zipalign -v 4 $VERSION-tmp.zip ../$VERSION.zip
-rm $VERSION-tmp.zip
+sudo rm $VERSION-tmp.zip
 cd ..
 ls -al $VERSION.zip && md5sum $VERSION.zip
 
