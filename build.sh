@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# lateautumn CI | Powered by Drone | 2021 -
-
-curl -X POST "https://api.telegram.org/bot1654679343:AAEue4ABaftJ2IEHjLFysx1nLjKEZe5e250/sendMessage" -d "chat_id=-1001218876577&text=Start compiling 
-$(date)"
-
-
 export ARCH=arm64
 export LLVM=1
 export LLVM_IAS=1
@@ -32,16 +26,6 @@ echo "Compiling"
 echo 
 make CC=clang LLVM=1 LLVM_IAS=1 -j${KJOBS}
 
-if  [ $? -eq 0 ]
-then 
-    curl -X POST "https://api.telegram.org/bot1654679343:AAEue4ABaftJ2IEHjLFysx1nLjKEZe5e250/sendMessage" -d "chat_id=-1001218876577&text=Compiled successfully! 
-$(date)"
-else
-    curl -X POST "https://api.telegram.org/bot1654679343:AAEue4ABaftJ2IEHjLFysx1nLjKEZe5e250/sendMessage" -d "chat_id=-1001218876577&text=Failed to compile !
-$(date)"
-    exit 1
-fi
-
 echo
 echo "Building Kernel Package"
 
@@ -57,10 +41,4 @@ zipalign -v 4 $VERSION-tmp.zip ../$VERSION.zip
 rm $VERSION-tmp.zip
 cd ..
 ls -al $VERSION.zip && md5sum $VERSION.zip
-
-echo
-echo "Uploading"
-echo
-
-curl -v -F "chat_id=-1001218876577" -F document=@${VERSION}.zip https://api.telegram.org/bot1654679343:AAEue4ABaftJ2IEHjLFysx1nLjKEZe5e250/sendDocument
 
