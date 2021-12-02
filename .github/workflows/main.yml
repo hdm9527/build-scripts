@@ -21,7 +21,7 @@ jobs:
           sudo git clone https://github.com/mARk-android/toolchain_mARkclang /drone/build-tools/proton-clang --depth 1
           sudo git clone https://github.com/lateautumn233/AnyKernel3 /drone/build-tools/anykernel --branch apollo --depth 1
           cd /drone/build-tools/android_kernel_xiaomi_sm8250
-          sudo git submodule init && git submodule update
+          sudo git submodule init && sudo git submodule update
           sudo bash /drone/build-tools/build-scripts/build.sh
       - name : Upload packages
         uses: actions/upload-artifact@master
