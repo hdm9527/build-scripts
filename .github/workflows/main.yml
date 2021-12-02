@@ -22,6 +22,7 @@ jobs:
           git clone https://github.com/lateautumn233/AnyKernel3 build-tools/anykernel --branch apollo --depth 1
           cd build-tools/android_kernel_xiaomi_sm8250
           git submodule init && sudo git submodule update
-          bash ../build-scripts/build.sh
+          cd ../../
+          bash build-tools/build-scripts/build.sh
       - name : Upload packages
         uses: actions/upload-artifact@master
