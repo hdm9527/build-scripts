@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@master
       
       - name: Install dependency
-        run: sudo apt-get update && sudo apt-get install -y bison build-essential bc bison curl libssl-dev git zip python flex cpio
+        run: sudo apt-get update && sudo apt-get install -y bison build-essential bc bison curl libssl-dev git zip python flex cpio zipalign
 
       - name: ci
         run: |
