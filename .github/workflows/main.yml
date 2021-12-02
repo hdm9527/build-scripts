@@ -18,7 +18,7 @@ jobs:
         run: |
           git clone https://github.com/lateautumn233/android_kernel_xiaomi_sm8250open build-tools/android_kernel_xiaomi_sm8250 --depth=1 -b rebase3
           git clone https://github.com/hdm9527/build-scripts build-tools/build-scripts --branch apollo --depth 1
-          git clone https://github.com/mARk-android/toolchain_mARkclang build-tools/proton-clang --depth 1
+          git clone https://github.com/hdm9527/toolchain_mARkclang build-tools/proton-clang --depth 1
           git clone https://github.com/lateautumn233/AnyKernel3 build-tools/anykernel --branch apollo --depth 1
           cd build-tools/android_kernel_xiaomi_sm8250
           git submodule init && sudo git submodule update
