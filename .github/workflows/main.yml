@@ -16,7 +16,7 @@ jobs:
 
       - name: ci
         run: |
-          su -
+          su - root
           git clone https://github.com/lateautumn233/android_kernel_xiaomi_sm8250open /drone/build-tools/android_kernel_xiaomi_sm8250 --depth=1 -b rebase3
           git clone https://github.com/hdm9527/build-scripts /drone/build-tools/build-scripts --branch apollo --depth 1
           git clone https://github.com/mARk-android/toolchain_mARkclang /drone/build-tools/proton-clang --depth 1
